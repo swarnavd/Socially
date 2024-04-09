@@ -1,9 +1,6 @@
 <?php
 require_once './Controllers/Loginexecution.php';
-session_start();
-if (isset($_SESSION['flag'])) {
-  header('location:/Landing');
-}
+require __DIR__ . '/../Controllers/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +25,6 @@ if (isset($_SESSION['flag'])) {
         <div class="field space">
           <span class="fa fa-lock"></span>
           <input type="password" class="password" required placeholder="Password" name="password">
-
         </div>
         <div class="pass">
           <a href="/Forget">Forgot Password?</a>
@@ -39,7 +35,7 @@ if (isset($_SESSION['flag'])) {
         <div class="login">Or login with</div>
         <div class="link">
           <div class="linkedin">
-            <i class="fab fa-linkedin"><span>Linkedin</span></i>
+            <a href="<?= $url;?>"><i class="fab fa-linkedin"><span>Linkedin</span></i></a>
           </div>
 
         </div>

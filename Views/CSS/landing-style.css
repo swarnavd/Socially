@@ -184,12 +184,15 @@ input::placeholder {
 
 
 }
-
+.social {
+  display: flex;
+  gap: 20px;
+}
 .form {
   position: absolute;
   width: 30%;
   background-color: #15172b;
-  top: 50%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 30px;
@@ -212,6 +215,15 @@ margin: 20px 0;
   padding: 15px;
   background-color: white;
   border-radius: 25px;
+}
+#button {
+  position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 60px;
+    border-radius: 20px;
+    background-color: transparent;
+    margin: 20px 0;
 }
 .caption {
   margin: 10px 0;

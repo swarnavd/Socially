@@ -1,8 +1,5 @@
 <?php
-session_start();
-if (!isset($_SESSION['flag'])) {
-  header('location:/Login');
-}
+require_once __DIR__ . '/../Controllers/Sessioncheck.php';
 require_once './Controllers/Profileprocess.php';
 ?>
 <!DOCTYPE html>
@@ -25,14 +22,11 @@ require_once './Controllers/Profileprocess.php';
           <li><a href="#">Contact Us</a></li>
           <li><a href="#">About Us</a></li>
           <li><a href="/Profile">Profile</a></li>
+          <li><a href="/Add">Add Post</a></li>
+          <li><a href="/Edit">Edit profile</a></li>
           <li><a href="/Logout">Log out</a></li>
           <!--navigation menu styling ends from here-->
         </ul>
-        <!--search box styling starts from here-->
-        <!-- <div class="search  flex-aligncenter">
-          <input type="text" placeholder="Enter Search now" class="fade">
-        </div> -->
-        <!--Search box styling ends here-->
         <div class="profile">
           <div class="img-container">
             <?php echo '<img src="data:image;base64,' . base64_encode($users['image']) . ' " class="img-profile">'; ?>

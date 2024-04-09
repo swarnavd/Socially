@@ -1,5 +1,4 @@
 <?php
-
 $url = $_SERVER['REQUEST_URI'];
 $url=explode("?", $url);
 switch ($url[0]) {
@@ -42,7 +41,13 @@ switch ($url[0]) {
   case '/Edit':
     require './Views/Edit.view.php';
     break;
+  case '/Linkedin':
+    require './Views/Login.view.php';
+    break;
+  case '/403':
+    require './Views/403.php';
+    break;
   default:
-  require './Views/Login.view.php';
+    require './Views/404.php';
 }
 ?>
