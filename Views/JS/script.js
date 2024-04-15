@@ -1,16 +1,24 @@
 $(document).ready(function () {
   $("#otp").click(function () {
-    $.ajax({
-      type: "POST",
-      url: "./Controllers/otppp.php",
-      data: {
-        email: $('#email').val()
-      },
-      success: function (response) {
-        $('#otpf').show();
-        $('#email').hide();
-      },
-    });
+    var password = $('#password').val();
+    if (length.password > 5) {
+      $.ajax({
+        type: "POST",
+        url: "./Controllers/otppp.php",
+        data: {
+          email: $('#email').val(),
+          fname: $('#fullname').val(),
+          password: $('#password').val()
+        },
+        success: function (response) {
+          $('#otpf').show();
+          $('#email').hide();
+        },
+      });
+    }
+    else {
+      alert("Password should be more than 5");
+    }
   });
 });
 

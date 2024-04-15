@@ -2,7 +2,6 @@
 require_once __DIR__ . '/../Controllers/Sessioncheck.php';
 require_once './Controllers/Profileprocess.php';
 require_once './Controllers/Defaultprocess.php';
-// require_once './Controllers/Likecount.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../Models/Query.php';
 //If submit button is clicked.
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
   $ob = new Query();
   // Checks if user want to update profile name or image or both.
   if (isset($_FILES['pp']['tmp_name']) && !empty($_FILES['pp']['tmp_name'])) {

@@ -1,7 +1,7 @@
 <?php
 require './Models/Query.php';
 // Checks if submit button is pressed or not.
-if(isset($_POST['submit'])) {
+if (isset($_POST['submit'])) {
   session_start();
   // Validate OTP.
   if ($_SESSION['otp'] == $_POST['otp']) {
@@ -20,8 +20,8 @@ if(isset($_POST['submit'])) {
     else {
       $message = "Email already exists";
       session_destroy();
+    }
   }
-}
 // If Otp not matched.
 else {
   $message = "Sorry not matched.";

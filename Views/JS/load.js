@@ -26,7 +26,7 @@ $(document).ready(function () {
     var postId = $(this).data('post-id');
     console.log(postId);
     var like = $(this).find('.show-count');
-    
+
     $.ajax({
       url: "../Controllers/Likecount.php",
       method: 'POST',
@@ -58,7 +58,7 @@ $(document).ready(function () {
         'comment': comment
       },
       success: function (res) {
-        grandParent.find('.comment1 .show-comment').html(res);
+        grandParent.find('.show-comment').html(res);
       }
     })
 

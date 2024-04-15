@@ -225,7 +225,8 @@ class Query
       $sql2->execute();
       $post = $sql2->fetchAll(PDO::FETCH_ASSOC);
       return $post;
-    } catch (PDOException $e) {
+    }
+    catch (PDOException $e) {
       // Handle the exception .
       echo "Error: " . $e->getMessage();
     }
@@ -375,7 +376,7 @@ class Query
    *  User's user name in linkedin.
    * @param string $email
    *  User's email id on linkedin.
-   * 
+   *
    * @return void
    */
   public function linkedinRegister(string $user, string $email)

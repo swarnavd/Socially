@@ -22,7 +22,7 @@ require './Controllers/Otpvalidation.php';
 
       <div class = "input-container ic1">
 
-        <input id = "firstname" class = "input" type = "text" placeholder = " " name = "uname" />
+        <input id = "fullname" class = "input" type = "text" placeholder = " " name = "uname" />
         <div class = "cut"></div>
         <label for = "name" class = "placeholder">Name</label>
       </div>

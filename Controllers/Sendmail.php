@@ -7,8 +7,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 /**
  * A class to send mail for different purpose.
  */
-class Sendmail
-{
+class Sendmail {
   /**
    * Variable to act as a object of PHPMailer/
    *
@@ -24,8 +23,7 @@ class Sendmail
   /**
    * Constructor to initialize PHPMailer and Dotenv class.
    */
-  public function __construct()
-  {
+  public function __construct() {
     $this->mail = new PHPMailer(TRUE);
     $this->env = new Dotenv();
   }
@@ -34,8 +32,7 @@ class Sendmail
    *
    * @return void
    */
-  public function config()
-  {
+  public function config() {
     $this->mail->isSMTP(TRUE);
     $this->mail->Host = 'smtp.gmail.com';
     $this->mail->SMTPAuth = TRUE;
@@ -45,7 +42,7 @@ class Sendmail
     // Accesing password from .env file.
     $this->mail->Password = $_ENV['appPassword'];
     $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-    $this->mail->Port = 465;
+    $this->mail->Port = 587;
     // Adding sender's email address.
     $this->mail->setFrom($_ENV['username']);
   }
@@ -59,8 +56,7 @@ class Sendmail
    *
    * @return void
    */
-  public function sendReset(string $email, string $link)
-  {
+  public function sendReset(string $email, string $link) {
     $this->config();
     $mail = $this->mail;
     $mail->addAddress($email);
@@ -78,8 +74,7 @@ class Sendmail
 
    * @return void
    */
-  public function sendOtp(string $email,  int $otp)
-  {
+  public function sendOtp(string $email,  int $otp) {
     $this->config();
     $mail = $this->mail;
     $mail->addAddress($email);
