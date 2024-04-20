@@ -5,7 +5,7 @@ session_start();
 $pid = (int)$_POST['postid'];
 $ob= new Query();
 // Checks if same user likes same post twice or not.
-if($ob->getLikesinfo($_SESSION['email'], $pid)){
+if($ob->getLikesinfo($_SESSION['email'], $pid)) {
   // Insert likes of post in likes table.
   $ob->insertLikes($_SESSION['email'], $pid);
   // Increases the likes count on post table.

@@ -8,6 +8,6 @@ if (isset($_POST['submit'])) {
     $image = file_get_contents($_FILES['pp']['tmp_name']);
   }
   session_start();
-  $ob->editProfile($_SESSION['email'],$_POST['uname'], $image);
+  $ob->editProfile($_SESSION['email'], $_POST['uname'], $image);
   }
 ?>

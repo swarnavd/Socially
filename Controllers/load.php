@@ -7,11 +7,12 @@ $ob = new Query();
 // Fetch all the deatils related to post.
 $pro = $ob->showProfile($starting);
 ?>
+<!-- Collecting reponse as form of some div -->
 <?php foreach ($pro as $x) : ?>
   <div class="post">
+    <!-- Shows profile name along with profile picture -->
     <div class="profile-container">
       <div class="img-container">
-
         <?php if (!empty($x['image'])) : ?>
           <?php echo '<img src="data:image;base64,' . base64_encode($x['image']) . ' " class="im">'; ?>
         <?php endif; ?>
@@ -20,7 +21,9 @@ $pro = $ob->showProfile($starting);
         <?= $x['user'] ?>
       </div>
     </div>
+    <!-- Shows user's caption -->
     <p class="caption"><?= $x['caption'] ?></p></br>
+    <!--If user upload some picture with caption then show it on feed page-->
     <?php if (!empty($x['post'])) : ?>
       <?php echo '<img src="data:image;base64,' . base64_encode($x['post']) . '" >'; ?></br>
       <div class="like">

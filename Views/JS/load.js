@@ -2,11 +2,12 @@
 $(document).ready(function () {
   $(".com").hide();
   let offset = 0;
-
+/**
+ * A function to load next two post whenever user clicks on load more button.
+ */
   $("#button").click(function () {
-
+    // Incrementing the offset value by 2.
     offset += 2;
-
     $.ajax({
       url: "../Controllers/load.php",
       method: 'POST',
@@ -14,17 +15,21 @@ $(document).ready(function () {
         'starting': offset
       },
       success: function (response) {
-        // console.log(response);
+        // Appending next two post in a particular div after clicking load-more
+        //button.
         $('.post-show').append(response);
         $(".com").hide();
       }
 
     })
   })
-//Like count
+
+/**
+ * A function to show number of likes in a particular post to all user.
+ */
   $(document).on("click", ".social", function () {
+    // Collecting post-id.
     var postId = $(this).data('post-id');
-    console.log(postId);
     var like = $(this).find('.show-count');
 
     $.ajax({
@@ -35,12 +40,12 @@ $(document).ready(function () {
       },
       success: function(res) {
         like.text(res);
-        // like1.text(res);
-        console.log(res);
       }
     })
   })
-
+/**
+ * A function to display comments in a particular post.
+ */
   $(document).on("click", ".comment", function () {
     // Assuming the post ID is stored as a data attribute in the button
     var $this = $(this).parent();
@@ -64,7 +69,9 @@ $(document).ready(function () {
 
   })
 
-
+/**
+ * A function to insert comment to a particular post by different user.
+ */
   $(document).on("click", "#submit", function () {
     var $this = $(this).parent();
     var postId = $(this).data('post-id');
@@ -72,9 +79,6 @@ $(document).ready(function () {
     var commentTextarea = $(this).closest('.comment1').find('.com');
     var comment = commentTextarea.val();
     var show = $(this).find('.show-comment');
-    console.log("Post ID:", postId);
-    console.log("Comment:", comment);
-    console.log("uid:", userId);
     $.ajax({
       url: "../Controllers/Insertcomment.php",
       method: 'POST',
