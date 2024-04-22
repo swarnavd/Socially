@@ -1,0 +1,4 @@
+/vendor/
+/Core/.env
+/Views/Image
+.vscode
